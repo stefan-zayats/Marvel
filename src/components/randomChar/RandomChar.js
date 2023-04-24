@@ -1,69 +1,42 @@
 import { useEffect, useState } from 'react';
 import Spinner from '../spinner/Spinner.js';
 import ErrorMessage from '../errorMessage/errorMessage.js';
-import MarvelServise from '../../services/MarvelService';
+import useMarvelService from '../../services/MarvelService';
 import './randomChar.scss';
 import mjolnir from '../../resources/img/mjolnir.png';
 
-const RandomChar = (props) => {
+const RandomChar = () => {
 
-    const [char, setChar] = useState({});
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
+    const [char, setChar] = useState(null);
+    const { loading, error, getCharacter, clearError } = useMarvelService();
 
-    const marvelService = new MarvelServise();
-
-    // componentDidMount() {
-    //     this.updateChar();
-    //     // this.timerId = setInterval(this.updateChar, 3000);
-
-    // }
 
     useEffect(() => {
-        // updateChar();
-        // const timerId = setInterval(updateChar, 60000)
+        updateChar();
+        const timerId = setInterval(updateChar, 60000);
 
-        // return () => {
-        //     clearInterval(timerId)
-        // }
+        return () => {
+            clearInterval(timerId)
+        }
     }, [])
 
 
-
     const onCharLoaded = (char) => {
-
         setChar(char);
-        setLoading(loading => false)
     }
 
-
-    const onCharLoading = () => {
-
-        setLoading(loading => true)
-
-    }
-
-    const onError = () => {
-
-        setLoading(loading => false);
-        setError(error => true);
-    }
 
     const updateChar = () => {
-        const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
-        onCharLoading();
-        marvelService
-            .getCharacter(id)
-            .then(onCharLoaded)
-            .catch(onError)
+        clearError();
+        const id = Math.floor(Math.random() * (1011400 - 1011000)) + 1011000;
+        getCharacter(id)
+            .then(onCharLoaded);
     }
-
-
 
 
     const errorMessage = error ? <ErrorMessage /> : null;
     const spinner = loading ? <Spinner /> : null;
-    const content = !(loading || error) ? <View char={char} /> : null;
+    const content = !(loading || error || !char) ? <View char={char} /> : null;
 
 
 
