@@ -14,6 +14,14 @@ const useMarvelService = () => {
 		const res = await request(`${_apiBase}characters?limit=9&offset=${offset}&${_apiKey}`);
 		return res.data.results.map(_transformCharacter);
 	}
+
+
+	const getCharacterByName = async (name) => {
+		const res = await request(`${_apiBase}characters?name=${name}&${_apiKey}`);
+		return res.data.results.map(_transformCharacter);
+	};
+
+
 	const getCharacter = async (id) => {
 		const res = await request(`${_apiBase}characters/${id}?${_apiKey}`);
 		return _transformCharacter(res.data.results[0]);
@@ -42,8 +50,8 @@ const useMarvelService = () => {
 			homepage: char.urls[0].url,
 			wiki: char.urls[1].url,
 			comics: char.comics.items,
-		}
-	}
+		};
+	};
 
 
 	const _transformComics = (comics) => {
@@ -55,10 +63,10 @@ const useMarvelService = () => {
 			thumbnail: comics.thumbnail.path + '.' + comics.thumbnail.extension,
 			language: comics.textObjects[0]?.language || "en-us",
 			price: comics.prices[0].price ? `${comics.prices[0].price}$` : "not available",
-		}
-	}
+		};
+	};
 
-	return { loading, error, getAllCharacters, getCharacter, clearError, getComic, getAllComics };
+	return { loading, error, getAllCharacters, getCharacterByName, getCharacter, clearError, getComic, getAllComics };
 
 
 
