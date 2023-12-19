@@ -68,3 +68,36 @@
   bottom: 14px;
   right: -37px;
 }
+
+@media (max-width: 1100px) {
+  .randomchar {
+    grid-template-columns: 60% 40%;
+  }
+  .randomchar__block {
+    padding: 20px 20px;
+  }
+  .randomchar__btns a:nth-child(1) {
+    margin-right: 10px;
+  }
+  .randomchar__title {
+    max-width: 300px;
+  }
+  .randomchar__title:nth-child(2) {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 820px) {
+  .randomchar {
+    display: block;
+  }
+  .randomchar__block {
+    padding: 20px 20px;
+  }
+  .randomchar__title {
+    max-width: 340px;
+  }
+  .randomchar__title:nth-child(2) {
+    max-width: 250px;
+  }
+}

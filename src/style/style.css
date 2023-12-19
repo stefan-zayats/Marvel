@@ -147,7 +147,7 @@ input::-webkit-inner-spin-button {
 }
 
 .app {
-  width: 1100px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 50px 0 50px 0;
   position: relative;
@@ -178,5 +178,11 @@ main {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 1100px) {
+  .app {
+    margin: 0px 20px;
   }
 }
