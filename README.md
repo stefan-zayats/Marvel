@@ -1,1 +1,1 @@
-https://stefan-zayats.github.io/Marvel/
+https://stefan-zayats.github.io/Marvel
