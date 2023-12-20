@@ -8,13 +8,13 @@
 .randomchar__block {
   padding: 40px 35px;
   display: grid;
-  grid-template-columns: 180px auto;
+  grid-template-columns: 37.5% auto;
   column-gap: 30px;
 }
 
 .randomchar__img {
-  width: 180px;
-  height: 180px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -99,5 +99,20 @@
   }
   .randomchar__title:nth-child(2) {
     max-width: 250px;
+  }
+}
+
+@media (max-width: 520px) {
+  .randomchar {
+    display: block;
+  }
+  .randomchar__block {
+    display: block;
+  }
+  .randomchar__title {
+    max-width: 300px;
+  }
+  .randomchar__title:nth-child(2) {
+    max-width: 150px;
   }
 }

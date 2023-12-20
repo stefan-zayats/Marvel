@@ -14,6 +14,8 @@
         }
     }
     &__menu {
+       
+
         ul {
             display: flex;
             justify-content: space-between;
@@ -28,4 +30,29 @@
             }
         }
     }
+}
+
+@media (max-width: 520px) { 
+    .app{
+        &__header{
+            margin: 0px 20px; 
+        }
+        &__title{
+            max-width: 200px;
+        }
+        &__menu{
+            display: flex;
+            align-items: center;
+            
+           
+            ul {
+                p{
+                    display: none;
+                }
+                display: block;
+            }        
+                
+        }
+    }
+    
 }

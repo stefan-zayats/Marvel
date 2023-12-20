@@ -54,9 +54,12 @@ input::-webkit-inner-spin-button {
     position: relative;
     .bg-decoration {
         position: absolute;
-        right: -174px;
+        right: -12%;
         bottom: -70px;
         z-index: -1;
+        width: 42%;
+        // height: 20%;
+        
     }
 }
 
@@ -84,8 +87,38 @@ main {
 @media (max-width: 1100px) { 
     .app{
         margin: 0px 20px;
+        .bg-decoration {
+            right: -3%; 
+        }
     }
-    .bg-decoration {
-        
+    
+}
+@media (max-width: 820px) { 
+    .app{
+        .bg-decoration {
+            bottom: 50px;
+        }
+    }
+}
+
+@media (max-width: 820px) { 
+    .app{
+        .bg-decoration {
+            bottom: 50px;
+        }
+    }
+}
+@media (max-width: 520px) { 
+    .app{
+        .bg-decoration {
+            bottom: 1000px;
+        }
+    }
+}
+@media (max-width: 400px) { 
+    .app{
+        .bg-decoration {
+            bottom: 830px;
+        }
     }
 }

@@ -28,3 +28,22 @@
 .app__menu ul li a:hover {
   color: #9F0013;
 }
+
+@media (max-width: 520px) {
+  .app__header {
+    margin: 0px 20px;
+  }
+  .app__title {
+    max-width: 200px;
+  }
+  .app__menu {
+    display: flex;
+    align-items: center;
+  }
+  .app__menu ul {
+    display: block;
+  }
+  .app__menu ul p {
+    display: none;
+  }
+}
