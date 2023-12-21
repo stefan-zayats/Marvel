@@ -6,6 +6,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, 225px);
   justify-content: space-between;
+  column-gap: 15px;
   row-gap: 55px;
 }
 
@@ -37,4 +38,27 @@
 
 .comics__item:hover {
   transform: translateY(-5px);
+}
+
+@media (max-width: 510px) {
+  .comics__grid {
+    display: block;
+  }
+  .comics__item {
+    margin: 40px 20px 0px 20px;
+  }
+  .comics__item-img {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 100%;
+  }
+  .comics__item-name {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .comics__item-price {
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.6);
+  }
 }

@@ -109,16 +109,22 @@ main {
     }
 }
 @media (max-width: 520px) { 
+    main {
+        margin-top: 20px;    }
     .app{
         .bg-decoration {
-            bottom: 1000px;
+            position: relative;
+            bottom: 1250px;
+            left: 55%;
         }
     }
 }
 @media (max-width: 400px) { 
     .app{
         .bg-decoration {
-            bottom: 830px;
+            position: relative;
+            bottom: -20px;
+            left: 30%;
         }
     }
 }

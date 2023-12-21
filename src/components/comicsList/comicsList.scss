@@ -6,6 +6,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, 225px);
         justify-content: space-between;
+        column-gap: 15px;
         row-gap: 55px;
     }
     &__item {
@@ -33,4 +34,30 @@
             transform: translateY(-5px);
         }
     }
+}
+
+@media (max-width:510px) {
+.comics{
+    &__grid {
+        display: block;
+    }
+    &__item {
+        margin: 40px 20px 0px 20px;
+        &-img {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+            width: 100%;
+            height: 100%;
+        }
+        &-name {
+            font-size: 18px;
+            line-height: 22px;
+        }
+        &-price {
+            font-size: 16px;
+            line-height: 20px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+    }
+}
+ 
 }

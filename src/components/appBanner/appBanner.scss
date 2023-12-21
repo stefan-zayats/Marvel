@@ -16,5 +16,79 @@
             padding-left: 83px;
             padding-top: 18px;
         }
+        &-text-row{
+            display: none;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 32px;
+            color: #FFFFFF;
+            padding: 18px 0px 18px 83px;
+        }
     }
+}
+
+@media (max-width: 720px) {
+    
+    .app {
+        &__banner {
+            padding: 0 15px 0 15px;
+
+            &-text {
+                display: flex;
+                align-self: center;
+                padding-left: 30px;
+                 padding-top: 0px;
+               
+                font-size: 20px;
+                line-height: 27px;
+            }
+        }
+    }
+}
+@media (max-width: 520px) {
+    
+    .app {
+        &__banner {
+            display: block;
+            height: 100%;
+            position: relative;
+            padding: 0 10px 0 10px;
+            &-logo{
+                padding: 0px 10px 0px 0px;
+                position: absolute;
+                top:0;
+                right: 0;    
+            }
+            &-text {
+               max-width: 380px;
+                display:block ;
+                padding-left: 10px;
+                padding-top: 10px;
+            }
+            
+            
+        }
+    }
+   
+}
+
+@media (max-width: 520px) {
+    
+    .app {
+        &__banner {
+          
+            &-text {
+               display:block ;
+               font-size: 24px;
+               line-height: 32px;
+               padding: 10px;
+
+            }
+            &-text-row{
+                display: none;
+            }
+            
+        }
+    }
+   
 }
